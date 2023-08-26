@@ -1,0 +1,20 @@
+.btnReset {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 3rem;
+  padding: 6px 10px 0 10px;
+  border-radius: 5px;
+  transition: ease all 0.5ms;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  background: rgb(211, 211, 211);
+  transform: scale(1.1);
+}
