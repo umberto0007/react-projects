@@ -1,7 +1,7 @@
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import style from './Todo.module.css';
 
-function Todo() {
+function Todo({ todo }) {
   return (
     <div className={style.task}>
       <input
@@ -10,9 +10,14 @@ function Todo() {
         value="1"
         name="nameradio"
       />
-      <div className={style.taskText}>
-        <div>Header</div>
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+      <div className={style.taskContent}>
+        <div className={style.taskHeader}>
+          <div>{todo.header}</div>
+        </div>
+
+        <div className={style.taskText}>
+          <div>{todo.text}</div>
+        </div>
       </div>
       <button className={style.delete}>
         <RiDeleteBin6Fill />

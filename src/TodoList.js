@@ -1,19 +1,22 @@
-import './fonts/American Retro.ttf';
-import './TodoLIst.css';
+import { useState } from 'react';
 import TodoForm from './components/Todos/TodoForm';
 import TodoReset from './components/Todos/TodoReset';
 import TodoTasksLIst from './components/Todos/TodoTasksLIst';
+import './fonts/American Retro.ttf';
+import './TodoLIst.css';
 
 function TodoList() {
+  const [todos, setTodos] = useState([]);
+
   return (
     <div className="TodoList">
       <div className="main">
         <div className="container">
           <h1>Todo list</h1>
           <div className="wrapp">
-            <TodoForm />
+            <TodoForm todos={todos} setTodos={setTodos} />
             <TodoReset />
-            <TodoTasksLIst />
+            <TodoTasksLIst todos={todos} />
           </div>
         </div>
       </div>

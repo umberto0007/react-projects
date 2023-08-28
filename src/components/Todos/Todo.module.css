@@ -16,11 +16,21 @@
   height: 20px;
 }
 
+.taskContent {
+  width: 100%;
+}
+
+.taskHeader {
+  background: linear-gradient(70deg, lightgray, white);
+  padding: 5px;
+  border-radius: 5px 5px 0 0;
+  margin: 0 10px 0 10px;
+}
+
 .taskText {
-  width: 77%;
   background: #fefefe;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   margin: 0 10px 0 10px;
 }
 
@@ -30,6 +40,7 @@
   font-size: 1.8rem;
   color: #f1645f;
   transition: transform 0.3s;
+  margin-left: 5px;
 }
 .delete:hover {
   background: lightgray;
