@@ -1,11 +1,11 @@
 import Todo from './Todo';
 import style from './TodoTasksList.module.css';
 
-function TodoTasksLIst({ todos }) {
+function TodoTasksLIst({ todos, deleteTodo }) {
   return (
     <div className={style.tasks}>
-      {todos.map((todo, index) => (
-        <Todo todo={todo} key={index} />
+      {todos.map((todo) => (
+        <Todo deleteTodo={deleteTodo} todo={todo} key={todo.id} />
       ))}
     </div>
   );

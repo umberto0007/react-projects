@@ -23,8 +23,12 @@ function TodoList() {
     setTodos(updatedTodoArr);
   };
 
+  const deleteTodoHandler = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
-    <div className="TodoList">
+    <div className="todo-list">
       <div className="main">
         <div className="container">
           <h1>Todo list</h1>
@@ -37,7 +41,7 @@ function TodoList() {
               setTodosText={setTodosText}
             />
             <TodoReset />
-            <TodoTasksLIst todos={todos} />
+            <TodoTasksLIst todos={todos} deleteTodo={deleteTodoHandler} />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import style from './Todo.module.css';
 
-function Todo({ todo }) {
+function Todo({ todo, deleteTodo }) {
   return (
     <div className={style.task}>
       <input
@@ -19,7 +19,7 @@ function Todo({ todo }) {
           <div>{todo.text}</div>
         </div>
       </div>
-      <button className={style.delete}>
+      <button onClick={() => deleteTodo(todo.id)} className={style.delete}>
         <RiDeleteBin6Fill />
       </button>
     </div>
