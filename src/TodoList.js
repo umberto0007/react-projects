@@ -8,19 +8,15 @@ import './TodoLIst.css';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
-  const [todosHeader, setTodosHeader] = useState('');
-  const [todosText, setTodosText] = useState('');
 
-  const addTodoHandle = () => {
+  const addTodoHandle = (header, text) => {
     const newTodoItem = {
-      header: todosHeader,
-      text: todosText,
+      header,
+      text,
       isCompleted: false,
       id: uuidv4(),
     };
-    let updatedTodoArr = [...todos];
-    updatedTodoArr.push(newTodoItem);
-    setTodos(updatedTodoArr);
+    setTodos([...todos, newTodoItem]);
   };
 
   const deleteTodoHandler = (id) => {
@@ -33,13 +29,7 @@ function TodoList() {
         <div className="container">
           <h1>Todo list</h1>
           <div className="wrapp">
-            <TodoForm
-              addTodo={addTodoHandle}
-              todosHeader={todosHeader}
-              setTodosHeader={setTodosHeader}
-              todosText={todosText}
-              setTodosText={setTodosText}
-            />
+            <TodoForm addTodo={addTodoHandle} />
             <TodoReset />
             <TodoTasksLIst todos={todos} deleteTodo={deleteTodoHandler} />
           </div>
