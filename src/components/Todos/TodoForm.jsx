@@ -1,26 +1,18 @@
-import { useState } from 'react';
 import { IoCreateOutline } from 'react-icons/io5';
 import style from './TodoForm.module.css';
 
-function TodoForm({ todos, setTodos }) {
-  const [todosHeader, setTodosHeader] = useState('');
-  const [todosText, setTodosText] = useState('');
-
-  const addTodoHandle = () => {
-    const newTodoItem = {
-      header: todosHeader,
-      text: todosText,
-    };
-    let updatedTodoArr = [...todos];
-    updatedTodoArr.push(newTodoItem);
-    setTodos(updatedTodoArr);
-  };
-
+function TodoForm({
+  addTodo,
+  todosHeader,
+  setTodosHeader,
+  todosText,
+  setTodosText,
+}) {
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    addTodoHandle(todosHeader);
+    addTodo(todosHeader);
     setTodosHeader('');
-    addTodoHandle(todosText);
+    addTodo(todosText);
     setTodosText('');
   };
 
@@ -38,7 +30,6 @@ function TodoForm({ todos, setTodos }) {
           <IoCreateOutline />
         </button>
       </div>
-
       <div className={style.myInput}>
         <input
           className={style.inputText}
