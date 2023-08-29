@@ -23,6 +23,13 @@ function TodoList() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const toggleTodoHandler = (id) =>
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : { todo }
+      )
+    );
+
   return (
     <div className="todo-list">
       <div className="main">
@@ -31,7 +38,11 @@ function TodoList() {
           <div className="wrapp">
             <TodoForm addTodo={addTodoHandle} />
             <TodoReset />
-            <TodoTasksLIst todos={todos} deleteTodo={deleteTodoHandler} />
+            <TodoTasksLIst
+              todos={todos}
+              deleteTodo={deleteTodoHandler}
+              toggleTodo={toggleTodoHandler}
+            />
           </div>
         </div>
       </div>

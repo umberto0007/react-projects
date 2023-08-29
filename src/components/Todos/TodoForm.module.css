@@ -9,6 +9,12 @@
   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
 }
+@media (max-width: 479px) {
+  .myInput {
+    padding: 10px;
+    margin: 10px;
+  }
+}
 
 .inputText {
   width: 80%;
@@ -31,4 +37,11 @@
 .create:hover {
   background: lightgray;
   transform: scale(1.1);
+}
+
+@media (max-width: 479px) {
+  .create {
+    font-size: 1.3rem;
+    padding: 6px;
+  }
 }
