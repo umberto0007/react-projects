@@ -4,7 +4,7 @@
 }
 
 .btn {
-  background: #f2e985;
+  background: #c45165;
   font-size: 3rem;
   padding: 6px 10px 0 10px;
   border-radius: 5px;
@@ -16,6 +16,6 @@
 }
 
 .btn:hover {
-  background: #ede496;
+  background: #d66276;
   transform: scale(1.1);
 }

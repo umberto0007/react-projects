@@ -19,8 +19,9 @@ function TodoForm({ todos, setTodos }) {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     addTodoHandle(todosHeader);
+    setTodosHeader('');
     addTodoHandle(todosText);
-    addTodoHandle('');
+    setTodosText('');
   };
 
   return (
