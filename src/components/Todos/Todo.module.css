@@ -17,6 +17,26 @@
   }
 }
 
+.completeTask {
+  background: inherit;
+  border: 2px solid #777373;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  margin: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+}
+@media (max-width: 479px) {
+  .completeTask {
+    padding: 10px;
+    margin: 10px;
+  }
+}
+
 .taskContent {
   width: 75%;
 }
@@ -29,11 +49,32 @@
   border-radius: 5px 5px 0 0;
 }
 
+.completeTaskHeader {
+  font-size: 20px;
+  font-weight: bold;
+  background: inherit;
+  color: #777373;
+  border: 2px solid #777373;
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+  padding: 5px;
+}
+
 .taskText {
   word-wrap: break-word;
   background: #fefefe;
   padding: 5px;
   border-radius: 0 0 5px 5px;
+}
+
+.completeTaskText {
+  word-wrap: break-word;
+  background: inherit;
+  color: #777373;
+  border: 2px solid #777373;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 5px;
 }
 
 .complete {
@@ -55,6 +96,27 @@
   transform: scale(1.1);
 }
 
+.completeTrue {
+  background: inherit;
+  padding: 10px;
+  border: 2px solid #777373;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  color: #777373;
+  transition: transform 0.3s;
+  margin: 0 5px 0 10px;
+}
+@media (max-width: 479px) {
+  .completeTrue {
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+}
+.completeTrue:hover {
+  background: inherit;
+  transform: scale(1.1);
+}
+
 .delete {
   padding: 10px;
   border-radius: 5px;
@@ -69,6 +131,27 @@
 }
 @media (max-width: 479px) {
   .delete {
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+}
+
+.deleteComplete {
+  background: inherit;
+  padding: 10px;
+  border: 2px solid #777373;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  color: #777373;
+  transition: transform 0.3s;
+  margin-left: 5px;
+}
+.deleteComplete:hover {
+  transform: scale(1.1);
+  background: inherit;
+}
+@media (max-width: 479px) {
+  .deleteComplete {
     font-size: 1.3rem;
     padding: 5px;
   }

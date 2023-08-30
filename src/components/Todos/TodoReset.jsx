@@ -1,10 +1,10 @@
 import { GrPowerReset } from 'react-icons/gr';
 import style from './TodoReset.module.css';
 
-function TodoReset() {
+function TodoReset({ resetTodos }) {
   return (
     <div className={style.btnReset}>
-      <button className={style.btn}>
+      <button onClick={() => resetTodos()} className={style.btn}>
         <GrPowerReset />
       </button>
     </div>

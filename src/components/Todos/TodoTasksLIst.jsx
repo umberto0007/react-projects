@@ -6,10 +6,10 @@ function TodoTasksLIst({ todos, deleteTodo, toggleTodo }) {
     <div className={style.tasks}>
       {todos.map((todo) => (
         <Todo
+          key={todo.id}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
           todo={todo}
-          key={todo.id}
         />
       ))}
     </div>
