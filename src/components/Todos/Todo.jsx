@@ -7,17 +7,27 @@ function Todo({ todo, deleteTodo, toggleTodo }) {
     <div className={`${style.task} ${todo.isCompleted && style.completeTask}`}>
       <div className={style.taskContent}>
         <div
-          className={`${style.taskHeader} ${
-            todo.isCompleted && style.completeTaskHeader
-          }`}
+          className={
+            todo.header
+              ? `${style.taskHeader} ${
+                  todo.isCompleted && style.completeTaskHeader
+                }`
+              : style.emptyHeader
+          }
         >
           <div>{todo.header}</div>
         </div>
 
         <div
-          className={`${style.taskText} ${
-            todo.isCompleted && style.completeTaskText
-          }`}
+          className={
+            todo.header
+              ? `${style.taskText} ${
+                  todo.isCompleted && style.completeTaskText
+                }`
+              : todo.isCompleted
+              ? style.onlyTaskTextComplete
+              : style.onlyTaskText
+          }
         >
           <div>{todo.text}</div>
         </div>

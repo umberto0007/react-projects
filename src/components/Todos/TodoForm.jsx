@@ -23,9 +23,6 @@ function TodoForm({ addTodo }) {
           placeholder="header..."
           onChange={(e) => setTodosHeader(e.target.value)}
         />
-        <button type="submit" className={style.create}>
-          <IoCreateOutline />
-        </button>
       </div>
       <div className={style.myInput}>
         <input

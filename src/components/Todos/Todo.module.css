@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   margin: 20px;
   border-radius: 10px;
   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
@@ -23,12 +23,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px;
+  padding: 13px;
   margin: 20px;
   border-radius: 10px;
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+  box-shadow: none;
 }
 @media (max-width: 479px) {
   .completeTask {
@@ -41,17 +39,23 @@
   width: 75%;
 }
 
+.emptyHeader {
+  display: none;
+}
+
 .taskHeader {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
+  letter-spacing: 0.05rem;
   background: linear-gradient(70deg, lightgray, white);
-  padding: 5px;
+  padding: 3px;
   border-radius: 5px 5px 0 0;
 }
 
 .completeTaskHeader {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
+  letter-spacing: 0.05rem;
   background: inherit;
   color: #777373;
   border: 2px solid #777373;
@@ -63,18 +67,40 @@
 .taskText {
   word-wrap: break-word;
   background: #fefefe;
-  padding: 5px;
+  font-size: 20px;
+  letter-spacing: 0.03rem;
+  padding: 3px;
   border-radius: 0 0 5px 5px;
 }
 
 .completeTaskText {
   word-wrap: break-word;
   background: inherit;
+  letter-spacing: 0.03rem;
   color: #777373;
   border: 2px solid #777373;
   border-top: none;
   border-radius: 0 0 5px 5px;
-  padding: 5px;
+  padding: 3px;
+}
+
+.onlyTaskText {
+  word-wrap: break-word;
+  font-size: 20px;
+  letter-spacing: 0.03rem;
+  background: #fefefe;
+  padding: 18px 18px 18px 5px;
+  border-radius: 5px;
+}
+
+.onlyTaskTextComplete {
+  word-wrap: break-word;
+  font-size: 20px;
+  color: #777373;
+  border: 2px solid #777373;
+  background: inherit;
+  padding: 18px 18px 18px 5px;
+  border-radius: 5px;
 }
 
 .complete {
