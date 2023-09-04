@@ -32,6 +32,7 @@
 }
 
 .create {
+  background: #f1ebc3;
   padding: 3px 10px 0 10px;
   border-radius: 5px;
   font-size: 1.8rem;
@@ -40,13 +41,6 @@
 }
 
 .create:hover {
-  background: lightgray;
+  background: #d9d7c2;
   transform: scale(1.1);
-}
-
-@media (max-width: 479px) {
-  .create {
-    font-size: 1.3rem;
-    padding: 6px;
-  }
 }

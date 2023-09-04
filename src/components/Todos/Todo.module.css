@@ -12,8 +12,11 @@
 }
 @media (max-width: 479px) {
   .task {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 10px 25px 10px;
   }
 }
 
@@ -30,13 +33,19 @@
 }
 @media (max-width: 479px) {
   .completeTask {
-    padding: 10px;
-    margin: 10px;
+    padding: 7px;
+    margin: 10px 10px 25px 10px;
   }
 }
 
 .taskContent {
   width: 75%;
+}
+@media (max-width: 479px) {
+  .taskContent {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }
 
 .emptyHeader {
@@ -50,6 +59,17 @@
   background: linear-gradient(70deg, lightgray, white);
   padding: 3px;
   border-radius: 5px 5px 0 0;
+}
+
+@media (max-width: 479px) {
+  .taskHeader,
+  .completeTaskHeader,
+  .taskText,
+  .completeTaskText,
+  .onlyTaskText,
+  .onlyTaskTextComplete {
+    text-align: center;
+  }
 }
 
 .completeTaskHeader {
@@ -69,6 +89,7 @@
   background: #fefefe;
   font-size: 20px;
   letter-spacing: 0.03rem;
+  line-height: 25px;
   padding: 3px;
   border-radius: 0 0 5px 5px;
 }
@@ -77,6 +98,7 @@
   word-wrap: break-word;
   background: inherit;
   letter-spacing: 0.03rem;
+  line-height: 25px;
   color: #777373;
   border: 2px solid #777373;
   border-top: none;
@@ -88,38 +110,53 @@
   word-wrap: break-word;
   font-size: 20px;
   letter-spacing: 0.03rem;
+  line-height: 25px;
   background: #fefefe;
   padding: 18px 18px 18px 5px;
   border-radius: 5px;
+}
+@media (max-width: 479px) {
+  .onlyTaskText {
+    padding: 5px;
+  }
 }
 
 .onlyTaskTextComplete {
   word-wrap: break-word;
   font-size: 20px;
+  letter-spacing: 0.03rem;
+  line-height: 25px;
   color: #777373;
   border: 2px solid #777373;
   background: inherit;
   padding: 18px 18px 18px 5px;
   border-radius: 5px;
 }
+@media (max-width: 479px) {
+  .onlyTaskTextComplete {
+    padding: 5px;
+  }
+}
 
 .complete {
+  background: #f1ebc3;
   padding: 10px;
   border-radius: 5px;
   font-size: 1.8rem;
   color: #30c030;
-  transition: transform 0.3s;
   margin: 0 5px 0 10px;
-}
-@media (max-width: 479px) {
-  .complete {
-    font-size: 1.3rem;
-    padding: 5px;
-  }
+  transition: all ease 0.2s;
 }
 .complete:hover {
-  background: lightgray;
-  transform: scale(1.1);
+  background: #d9d7c2;
+}
+
+@media (max-width: 479px) {
+  .complete {
+    width: 100%;
+    padding: 5px;
+    margin: 0;
+  }
 }
 
 .completeTrue {
@@ -134,31 +171,32 @@
 }
 @media (max-width: 479px) {
   .completeTrue {
-    font-size: 1.3rem;
     padding: 5px;
+    margin: 0;
   }
 }
 .completeTrue:hover {
   background: inherit;
-  transform: scale(1.1);
 }
 
 .delete {
+  background: #f1ebc3;
   padding: 10px;
   border-radius: 5px;
   font-size: 1.8rem;
   color: #f1645f;
   transition: transform 0.3s;
   margin-left: 5px;
+  transition: all ease 0.2s;
 }
 .delete:hover {
-  background: lightgray;
-  transform: scale(1.1);
+  background: #d9d7c2;
 }
 @media (max-width: 479px) {
   .delete {
-    font-size: 1.3rem;
+    width: 100%;
     padding: 5px;
+    margin: 0;
   }
 }
 
@@ -173,12 +211,11 @@
   margin-left: 5px;
 }
 .deleteComplete:hover {
-  transform: scale(1.1);
   background: inherit;
 }
 @media (max-width: 479px) {
   .deleteComplete {
-    font-size: 1.3rem;
     padding: 5px;
+    margin: 0;
   }
 }
