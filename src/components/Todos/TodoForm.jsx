@@ -1,16 +1,33 @@
 import { useState } from 'react';
-import { IoCreateOutline } from 'react-icons/io5';
+import { AiOutlinePlusSquare } from 'react-icons/ai';
 import style from './TodoForm.module.css';
 
 function TodoForm({ addTodo }) {
   const [todosHeader, setTodosHeader] = useState('');
   const [todosText, setTodosText] = useState('');
+  const [todosTextDirty, setTodosTextDirty] = useState(false);
+  const [todosTextError, setTodosTextError] = useState(
+    'Поле задачи не может быть пустым'
+  );
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
     addTodo(todosHeader, todosText);
-    setTodosHeader('');
+    todosText && setTodosHeader('');
     setTodosText('');
+  };
+
+  const todosTextHandler = (e) => {
+    setTodosText(e.target.value);
+    if (!e.target.value) {
+      setTodosTextError('Введите задачу');
+    } else {
+      setTodosTextError('');
+    }
+  };
+
+  const blurHandler = (e) => {
+    e.target.name === 'text' && setTodosTextDirty(true);
   };
 
   return (
@@ -20,22 +37,33 @@ function TodoForm({ addTodo }) {
           value={todosHeader}
           className={style.inputText}
           type="text"
-          placeholder="header..."
+          placeholder="Заголовок..."
           onChange={(e) => setTodosHeader(e.target.value)}
         />
       </div>
       <div className={style.myInput}>
         <input
-          className={style.inputText}
+          className={
+            todosTextError && todosTextDirty
+              ? style.inputNoText
+              : style.inputText
+          }
           type="text"
-          placeholder="my task..."
+          placeholder="Моя задача..."
           value={todosText}
-          onChange={(e) => setTodosText(e.target.value)}
+          onChange={(e) => todosTextHandler(e)}
+          name="text"
+          onBlur={(e) => blurHandler(e)}
+          required
         />
-        <button type="submit" className={style.create}>
-          <IoCreateOutline />
+        <button title="создать задачу" type="submit" className={style.create}>
+          <AiOutlinePlusSquare />
         </button>
       </div>
+
+      {todosTextDirty && (
+        <div style={{ color: 'red', marginLeft: 22 }}>{todosTextError} </div>
+      )}
     </form>
   );
 }

@@ -5,6 +5,7 @@
 
 .btn {
   background: #c45165;
+  color: wheat;
   font-size: 3rem;
   padding: 6px 10px 0 10px;
   border-radius: 5px;
@@ -20,6 +21,7 @@
 }
 @media (max-width: 479px) {
   .btn {
+    margin-top: 10px;
     font-size: 2.5rem;
   }
 }

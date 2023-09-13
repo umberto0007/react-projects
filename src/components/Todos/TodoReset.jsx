@@ -1,11 +1,15 @@
-import { GrPowerReset } from 'react-icons/gr';
+import { RiDeleteBin5Line } from 'react-icons/ri';
 import style from './TodoReset.module.css';
 
 function TodoReset({ resetTodos }) {
   return (
     <div className={style.btnReset}>
-      <button onClick={() => resetTodos()} className={style.btn}>
-        <GrPowerReset />
+      <button
+        title="удалить все задачи"
+        onClick={() => resetTodos()}
+        className={style.btn}
+      >
+        <RiDeleteBin5Line />
       </button>
     </div>
   );

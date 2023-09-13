@@ -9,7 +9,8 @@
 }
 
 .wrapp {
-  background: linear-gradient(to bottom left, #2a9d8f 50%, #e9c46a 50%);
+  background: #cfafaf;
+  border: 4px solid #8b6969;
   margin: 0 auto;
   padding: 5px;
   border-radius: 20px;
@@ -26,6 +27,7 @@
 }
 
 h1 {
+  color: #842e2e;
   padding-top: 70px;
   font-size: 5rem;
   letter-spacing: 0.1rem;

@@ -33,6 +33,7 @@ function Todo({ todo, deleteTodo, toggleTodo }) {
         </div>
       </div>
       <button
+        title="завершить задачу"
         onClick={() => toggleTodo(todo.id)}
         className={`${style.complete} ${
           todo.isCompleted && style.completeTrue
@@ -41,6 +42,7 @@ function Todo({ todo, deleteTodo, toggleTodo }) {
         <AiOutlineCheck />
       </button>
       <button
+        title="удалить задачу "
         onClick={() => deleteTodo(todo.id)}
         className={`${style.delete} ${
           todo.isCompleted && style.deleteComplete
