@@ -8,6 +8,11 @@ import './TodoLIst.css';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
+  //used localStorage for save tasks state after reload browser
+  useEffect(() => {
+    let savedTodo = JSON.parse(localStorage.getItem('todolist'));
+    savedTodo && setTodos(savedTodo);
+  }, []);
 
   const addTodoHandle = (header, text) => {
     const newTodoItem = {
@@ -38,11 +43,6 @@ function TodoList() {
     localStorage.setItem('todolist', JSON.stringify([]));
     setTodos([]);
   };
-
-  useEffect(() => {
-    let savedTodo = JSON.parse(localStorage.getItem('todolist'));
-    savedTodo && setTodos(savedTodo);
-  }, []);
 
   return (
     <div className="todo-list">

@@ -5,6 +5,7 @@ import style from './TodoForm.module.css';
 function TodoForm({ addTodo }) {
   const [todosHeader, setTodosHeader] = useState('');
   const [todosText, setTodosText] = useState('');
+  //states todosTextDirty and todosTextError created for error handling
   const [todosTextDirty, setTodosTextDirty] = useState(false);
   const [todosTextError, setTodosTextError] = useState(
     'Поле задачи не может быть пустым'
@@ -56,13 +57,14 @@ function TodoForm({ addTodo }) {
           onBlur={(e) => blurHandler(e)}
           required
         />
+
         <button title="создать задачу" type="submit" className={style.create}>
           <AiOutlinePlusSquare />
         </button>
       </div>
 
       {todosTextDirty && (
-        <div style={{ color: 'red', marginLeft: 22 }}>{todosTextError} </div>
+        <div className={style.textError}>{todosTextError}</div>
       )}
     </form>
   );
