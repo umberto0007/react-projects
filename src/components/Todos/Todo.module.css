@@ -45,10 +45,9 @@
 
 .taskHeader {
   word-wrap: break-word;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
   font-size: 1.44rem;
-  font-weight: bold;
   letter-spacing: 0.05rem;
   background: linear-gradient(70deg, lightgray, white);
   padding: 0.19rem;
